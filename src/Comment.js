@@ -1,10 +1,15 @@
 import React from 'react'
 
-const Comment = ({author, text}) => {
+const Comment = ({comment, deleteComment}) => {
+
+	const handleDelete = (event) => {
+		deleteComment(comment)
+	}
 	return (
-		<span>
-			{author} says: {text}
-		</span>
+		<li>
+			{comment.author} says: {comment.text}
+			<button onClick={handleDelete} >DELETE</button>
+		</li>
 	)
 }
 

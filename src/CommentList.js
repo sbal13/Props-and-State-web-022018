@@ -4,7 +4,7 @@ import Comment from './Comment'
 const CommentList = (props) => {
 
 	let comments = props.comments.map((comment, index) => {
-		return <li key={index}><Comment {...comment} /></li>
+		return <Comment key={index} comment={comment} deleteComment={props.deleteComment} />
 	})
 
 	return (
